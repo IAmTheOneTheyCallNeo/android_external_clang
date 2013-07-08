@@ -85,6 +85,8 @@ LOCAL_STATIC_LIBRARIES := \
 
 LOCAL_LDLIBS += -lpthread -lm -ldl
 
+LOCAL_CFLAGS := -fno-strict-aliasing $(call-cc-option,-Qunused-arguments)
+
 include $(CLANG_HOST_BUILD_MK)
 include $(CLANG_TBLGEN_RULES_MK)
 include $(BUILD_HOST_EXECUTABLE)
